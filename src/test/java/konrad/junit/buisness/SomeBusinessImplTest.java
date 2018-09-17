@@ -22,11 +22,11 @@ public class SomeBusinessImplTest {
         assertEquals(expectedResult, actualResult);
     }
 
-    @Test
-    public void calculateSumUsingSomeDataService() {
-        SomeBusinessImpl someBusiness = new SomeBusinessImpl();
-        someBusiness.setSomeDataService(() -> new int[]{1, 2, 3});
-        int expectedResult = 6;
-        assertEquals(expectedResult, someBusiness.calculateSumUsingSomeDataService());
-    }
+//    @Test
+//    public void calculateSumUsingSomeDataService() {
+//        SomeBusinessImpl someBusiness = new SomeBusinessImpl();
+//        someBusiness.setSomeDataService(() -> new int[]{1, 2, 3});
+//        int expectedResult = 6;
+//        assertEquals(expectedResult, someBusiness.calculateSumUsingSomeDataService());
+//    }
 }

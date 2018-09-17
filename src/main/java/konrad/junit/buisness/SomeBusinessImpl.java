@@ -2,7 +2,7 @@ package konrad.junit.buisness;
 
 import lombok.Data;
 
-@Data
+//@Data
 class SomeBusinessImpl {
 
 

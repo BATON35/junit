@@ -1,6 +1,5 @@
 package konrad.junit.buisness;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -13,7 +12,7 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class SomeBusinessImplMockTest {
     @InjectMocks
-    private SomeBusinessImpl someBusiness = new SomeBusinessImpl();
+    private SomeBusinessImpl someBusiness;
     @Mock
     //private SomeDataService dataServiceMock = mock(SomeDataService.class);
     private SomeDataService dataServiceMock;
