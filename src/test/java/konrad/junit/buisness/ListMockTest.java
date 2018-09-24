@@ -1,7 +1,9 @@
 package konrad.junit.buisness;
 
 import org.junit.Test;
+import org.mockito.ArgumentCaptor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -43,11 +45,28 @@ public class ListMockTest {
         String value = mock.get(0);
         String valueVer1 = mock.get(1);
         //Verify
-        verify(mock).get(0);
-        // verify(mock).get(anyInt());
-        verify(mock, times(2)).get(anyInt());//check times of invocation
+        verify(mock).get(1);
+        verify(mock, times(2)).get(anyInt());//check times of invocation for get
         verify(mock, atLeast(1)).get(anyInt());
         verify(mock, atMost(3)).get(anyInt());
         verify(mock, never()).get(2);
+    }
+    @Test
+    public void multipleArgumentCapturing() {
+        //SUT
+        mock.add("1");
+        mock.add("SomeString");
+        //Verification
+        ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+        verify(mock, times(2)).add(captor.capture());
+
+        assertEquals("SomeString", captor.getAllValues().get(1));
+
+    }
+    @Test
+    public void spying(){
+        ArrayList arrayListSpy = spy(ArrayList.class);
+        arrayListSpy.add("Test0");
+        System.out.println(arrayListSpy.get(0));
     }
 }
