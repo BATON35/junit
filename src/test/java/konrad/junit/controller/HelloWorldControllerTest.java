@@ -33,6 +33,8 @@ public class HelloWorldControllerTest {
                 .andExpect(content().string("Hello World")) // instead of .string() we can use for example  .json()
                 .andReturn();
 
-        assertEquals("Hello World", result.getResponse().getContentAsString());
+       // assertEquals("Hello World", result.getResponse().getContentAsString());
     }
+
+
 }
