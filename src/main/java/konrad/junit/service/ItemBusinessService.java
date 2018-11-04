@@ -17,14 +17,14 @@ public class ItemBusinessService {
         this.itemRepository = itemRepository;
     }
 
-    public Item retrieveHardcodeItem() {
+    public Item retrieveHardcodedItem() {
         return new Item(1, "Ball", 10, 100);
     }
 
     public List<Item> retrieveAllItem() {
         List<Item> items = itemRepository.findAll();
         for (Item item : items) {
-            item.setValue(item.getPrice() * item.getPrice());
+            item.setValue(item.getQuantity() * item.getPrice());
         }
         return items;
     }

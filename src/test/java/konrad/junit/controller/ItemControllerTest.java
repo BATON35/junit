@@ -15,7 +15,6 @@ import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -34,7 +33,7 @@ public class ItemControllerTest {
     @Test
     public void itemFromBusinessService_basic() throws Exception {
 
-        when(businessService.retrieveHardcodeItem()).thenReturn(
+        when(businessService.retrieveHardcodedItem()).thenReturn(
                 new Item(1, "Ball", 10, 100)
         );
 
